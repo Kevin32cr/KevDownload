@@ -36,6 +36,7 @@ def ComprobarSiesYouTube():
     else:
         return False
 
+#Descargar musica de youtube 
 def DescargarMusica():
     try:
         pafy.new(ComprobarSiesYouTube()).getbestaudio().download(filepath="./Descargas/Musicas")
@@ -44,7 +45,8 @@ def DescargarMusica():
     except:
         playsound(SonidoError)
         print('[/] Error al descargar Musica [/]')
-
+        
+#Descargar video de youtube 
 def DescargarVideo():
     try:
         pafy.new(ComprobarSiesYouTube()).getbest().download(filepath="./Descargas/Videos")
@@ -54,11 +56,14 @@ def DescargarVideo():
         playsound(SonidoError)
         print('[/] Error al descargar video [/]')
 
+#Detecta shortcut y llama a la funcion a ejecutar
 ctrlM = kb.HotKey.parse('<shift>+1')
 HotkeyMusica = kb.HotKey(ctrlM, DescargarMusica)
 
+#Detecta shortcut y llama a la funcion a ejecutar
 ctrlV = kb.HotKey.parse('<shift>+2')
 HotkeyVideo = kb.HotKey(ctrlV, DescargarVideo)
 
+#Listener para detectar teclas
 with kb.Listener(pulsa, suelta) as escuchador:
     escuchador.join()
