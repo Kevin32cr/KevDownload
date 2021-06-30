@@ -11,20 +11,23 @@ from playsound import playsound
 SoniodoDescargado = "./Effects/Descargado.wav"
 SonidoError = "./Effects/Error.wav"
 
+#Detecta Teclas
 def pulsa(teclas):
     HotkeyMusica.press(escuchador.canonical(teclas))
     HotkeyVideo.press(escuchador.canonical(teclas))
-
+#Detecta Teclas
 def suelta(teclas):
     HotkeyMusica.release(escuchador.canonical(teclas))
     HotkeyVideo.release(escuchador.canonical(teclas))
-    
+
+#Obteniene el link del video para descargar 
 def ObtenerLink():
     pyautogui.moveTo(180, 58)
     time.sleep(0.2)
     pyautogui.click(clicks=1)
     pyautogui.hotkey('ctrl','c')
 
+#Comprueba si el link es de youtube
 def ComprobarSiesYouTube():
     ObtenerLink()
     if str(pyperclip.paste())[:23] == 'https://www.youtube.com': 
