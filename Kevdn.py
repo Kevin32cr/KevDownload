@@ -11,6 +11,7 @@ from playsound import playsound
 """
  [+] Intrucciones [+]
  -> Ejecutar cualquier navegador en pantalla completa [ NO F11]
+ -> Abrir el video que quieres descargar
  -> Para descargar musicas precionar shift + 1
  -> Para descargar videos precionar shift + 2
  
@@ -53,7 +54,7 @@ def ComprobarSiesYouTube():
 #Descargar musica de youtube 
 def DescargarMusica():
     try:
-        pafy.new(ComprobarSiesYouTube()).getbestaudio().download(filepath="./Descargas/Musicas")
+        pafy.new(ComprobarSiesYouTube()).getbestaudio().download()
         print("[-] ¡Musica Descargada! [-]")
         playsound(SoniodoDescargado)
     except:
@@ -63,7 +64,7 @@ def DescargarMusica():
 #Descargar video de youtube 
 def DescargarVideo():
     try:
-        pafy.new(ComprobarSiesYouTube()).getbest().download(filepath="./Descargas/Videos")
+        pafy.new(ComprobarSiesYouTube()).getbest().download()
         print("[-] ¡Video Descargado! [-]")
         playsound(SoniodoDescargado)
     except:
