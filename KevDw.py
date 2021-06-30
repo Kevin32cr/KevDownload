@@ -7,6 +7,7 @@ import pyperclip
 import time
 from playsound import playsound
 
+#Efectos de sonido
 SoniodoDescargado = "./Effects/Descargado.wav"
 SonidoError = "./Effects/Error.wav"
 
