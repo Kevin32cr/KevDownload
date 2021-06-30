@@ -8,6 +8,19 @@ import pyperclip
 import time
 from playsound import playsound
 
+"""
+ [+] Intrucciones [+]
+ -> Ejecutar cualquier navegador en pantalla completa [ NO F11]
+ -> Para descargar musicas precionar shift + 1
+ -> Para descargar videos precionar shift + 2
+ 
+ [+] ¿Errores? [+]
+ -> Si al precionar cualquier shortcut para descargar
+ video/musica se escucha un sonido de error
+ modificar en la linea '40'pyautogui.moveTo(180, 58) las cordenadas
+ para poder posicionar el cursor en la URL 
+"""
+
 #Efectos de sonido
 SoniodoDescargado = "./Effects/Descargado.wav"
 SonidoError = "./Effects/Error.wav"
@@ -16,6 +29,7 @@ SonidoError = "./Effects/Error.wav"
 def pulsa(teclas):
     HotkeyMusica.press(escuchador.canonical(teclas))
     HotkeyVideo.press(escuchador.canonical(teclas))
+    
 #Detecta Teclas
 def suelta(teclas):
     HotkeyMusica.release(escuchador.canonical(teclas))
